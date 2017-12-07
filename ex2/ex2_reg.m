@@ -117,6 +117,7 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 
 % Plot Boundary
+
 plotDecisionBoundary(theta, X, y);
 hold on;
 title(sprintf('lambda = %g', lambda))
