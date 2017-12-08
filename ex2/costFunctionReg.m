@@ -21,11 +21,11 @@ x_size = size(X, 2)
 
 J = (-y' * log(sigmoid(X * theta)) - (1-y)' * log(1 - sigmoid(X * theta)))  / m + (lambda / (2 * m)) .* sum(theta(2:x_size).^2);
 
-grad(1) = ( X(:,1)' * ( sigmoid( X(:,1) * theta(1) ) - y ) )  / m;
+grad(1) = ( X(:, 1)' * ( sigmoid( X * theta ) - y ) )  / m;
 
-s_function = ( sigmoid( X(:, 2:x_size) * theta(2:x_size) ) - y );
+s_function = ( sigmoid( X * theta ) - y );
 
-sum_x = X(:, 2:x_size)' * s_function;
+sum_x = X(:, 2: x_size)' * s_function;
 
 reg_item = ((lambda / m) * theta(2:x_size));
 
